@@ -166,4 +166,3 @@ cython_debug/
 .idea
 .DS_Store
 database.ini/
-database.ini
