@@ -1,5 +1,5 @@
 import requests
-from list_companies import companies_data
+from src.list_companies import companies_data
 
 
 class HeadHunterRuAPI:
@@ -30,13 +30,11 @@ class HeadHunterRuAPI:
         """
 
         data_vacancy = []
-        url = 'https://api.hh.ru/vacancies?employer_id/'
+        url = 'https://api.hh.ru/vacancies?employer_id='
 
         for company_name, company_id in companies_data.items():
-            response = requests.get(f'{url}{company_id}').json()
+            response = requests.get(f'{url}{company_id}', params={'page': 0, 'per_page': 100}).json()['items']
             data_vacancy.append(response)
         return data_vacancy
 
 
-a = HeadHunterRuAPI
-print(a.getting_vacancy())
