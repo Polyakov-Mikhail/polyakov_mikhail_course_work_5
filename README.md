@@ -32,7 +32,15 @@ https://github.com/Polyakov-Mikhail/polyakov_mikhail_course_work_5
 ```bash
 poetry install
 ```
-3. Запуск проекта
+3. В файл database.ini необходимо внести данны своей БД
+```text
+[postgresql]
+host=
+user=
+password=
+port=
+```
+4. Запуск проекта
 ```text
 python main.py
 ```
